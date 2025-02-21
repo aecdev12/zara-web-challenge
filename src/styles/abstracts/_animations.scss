@@ -1,0 +1,13 @@
+@use "./variables" as *;
+
+@mixin spin-animation($speed: $transition-speed-slow) {
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  & {
+    animation: spin $speed linear infinite;
+  }
+}

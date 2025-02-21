@@ -1,0 +1,69 @@
+@use "./variables" as *;
+
+@mixin flex(
+  $align-item: center,
+  $justify-content: center,
+  $flex-direction: row,
+  $gap: 0,
+  $width: 100%,
+  $height: null
+) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+  gap: $gap;
+  width: $width;
+
+  @if $height {
+    height: $height;
+  }
+}
+
+@mixin breakpoint($point) {
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+@mixin bottomRightCornerTriangle($size: $corner-chip-default-size) {
+  & {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 0;
+      height: 0;
+      border-bottom: $size solid $background;
+      border-left: $size solid transparent;
+    }
+  }
+}
+
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  & {
+    &::-webkit-scrollbar {
+      width: $size;
+      height: $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+  }
+}
