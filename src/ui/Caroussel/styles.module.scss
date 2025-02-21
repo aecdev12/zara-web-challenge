@@ -1,0 +1,13 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.horizontal-list {
+  @include flex(center, flex-start, row, $spacing-md);
+  overflow-x: scroll;
+  padding-bottom: $spacing-lg;
+  @include scrollbars(4px, $brand-color, $light-gray);
+
+  @include breakpoint($breakpoint-ml) {
+    @include scrollbars(0px, $brand-color, $light-gray);
+  }
+}
