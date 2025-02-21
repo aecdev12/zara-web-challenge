@@ -1,0 +1,17 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.header {
+  padding: $spacing-md $spacing-xxl;
+  background-color: $foreground;
+  color: $background;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid $dark-gray;
+  @include flex(center, space-between, row, $spacing-md, $height: fit-content);
+
+  @include breakpoint($breakpoint-sm) {
+    padding: $spacing-md;
+  }
+}
