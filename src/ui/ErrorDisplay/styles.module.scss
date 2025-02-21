@@ -1,0 +1,6 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.error-display {
+  @include flex($flex-direction: column, $gap: $spacing-md, $height: 100%);
+}
