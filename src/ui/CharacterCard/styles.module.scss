@@ -1,0 +1,79 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+$red-stripe-height: 5.38px;
+$fav-button-height: 12px;
+$card-min-width: 160px;
+$card-image-height: 190px;
+$transition-time: $transition-speed-normal;
+$transition-type: $transition-mode-default;
+
+.character-card {
+  @include flex(flex-start, flex-start, column);
+  min-width: $card-min-width;
+  cursor: pointer;
+
+  & > .image-wrapper {
+    position: relative;
+    width: inherit;
+    height: calc($card-image-height - $red-stripe-height);
+    overflow: hidden;
+
+    & > img {
+      object-fit: contain;
+      transition: transform $transition-time $transition-type;
+    }
+  }
+
+  & > .footer {
+    @include flex(center, space-between);
+    background-color: $foreground;
+    color: $background;
+    text-transform: uppercase;
+    font-size: $font-sm;
+    padding: calc($spacing-md + $red-stripe-height) $spacing-md $spacing-lg;
+
+    & > * {
+      z-index: 1;
+      height: $spacing-md;
+    }
+
+    & svg,
+    button {
+      height: $fav-button-height;
+    }
+
+    @include bottomRightCornerTriangle();
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: $red-stripe-height;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: $brand-color;
+      transition: height $transition-time $transition-type;
+    }
+  }
+
+  &:hover {
+    & > .footer {
+      &::before {
+        height: 100%;
+      }
+    }
+
+    // Not in the design files but could be interesting to have
+    // & > .image-wrapper {
+    //   & > img {
+    //     transform: scale(1.1);
+    //   }
+    // }
+
+    & > .footer svg {
+      fill: $background;
+    }
+  }
+}
