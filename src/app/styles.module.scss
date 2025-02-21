@@ -1,0 +1,41 @@
+@use "../styles/abstracts/variables" as *;
+@use "../styles/abstracts/mixins" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.main-body {
+  padding: $spacing-xxl;
+  overflow: hidden;
+  @include flex(
+    flex-start,
+    flex-start,
+    column,
+    $gap: $spacing-sm,
+    $height: 100%
+  );
+
+  @include breakpoint($breakpoint-sm) {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  & > h1 {
+    text-transform: uppercase;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+
+    @include breakpoint($breakpoint-md) {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+.list-section {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
