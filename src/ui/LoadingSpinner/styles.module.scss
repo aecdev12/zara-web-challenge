@@ -1,0 +1,15 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/animations" as *;
+
+.spinner-wrapper {
+  @include flex($height: 100%);
+  & > svg {
+    width: $spacing-xl;
+    height: $spacing-xl;
+    fill: $brand-color;
+    color: $gray;
+
+    @include spin-animation();
+  }
+}
