@@ -1,0 +1,6 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.main-search-input {
+  padding-top: $spacing-sm;
+}
