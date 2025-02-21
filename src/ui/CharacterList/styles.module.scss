@@ -1,0 +1,33 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+$max-columns: 7;
+$mid-columns: 4;
+$min-columns: 2;
+
+.character-list {
+  @include flex(flex-start, flex-start, column, $spacing-xll, 100%, 100%);
+  overflow: hidden;
+  & > ul {
+    display: grid;
+    width: inherit;
+    height: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-template-columns: repeat($max-columns, minmax(0, 1fr));
+    gap: $spacing-md;
+    padding-right: $spacing-xs;
+
+    @include breakpoint($breakpoint-ml) {
+      grid-template-columns: repeat($mid-columns, minmax(0, 1fr));
+    }
+
+    @include breakpoint($breakpoint-sm) {
+      grid-template-columns: repeat($min-columns, minmax(0, 1fr));
+    }
+  }
+
+  & > p {
+    font-size: $font-s;
+  }
+}
