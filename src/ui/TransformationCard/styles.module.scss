@@ -1,0 +1,38 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.card-wrapper {
+  @include flex(flex-start, flex-start, column, $spacing-sm);
+  width: 179.2px;
+
+  @include breakpoint($breakpoint-md) {
+    width: 168.53px;
+  }
+
+  @include breakpoint($breakpoint-sm) {
+    width: 164px;
+  }
+
+  & > .img {
+    width: inherit;
+    aspect-ratio: 2/3;
+    position: relative;
+
+    & > img {
+      object-fit: contain;
+    }
+  }
+
+  & > .content {
+    @include flex(flex-start, flex-start, column, $spacing-xs);
+
+    & > label {
+      font-weight: $font-medium;
+    }
+
+    & > span {
+      line-height: $small-line-height;
+      font-size: $font-s;
+    }
+  }
+}
