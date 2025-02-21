@@ -1,0 +1,19 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.fav-count {
+  @include flex(center, flex-start, row, $spacing-xs, fit-content);
+  color: $background;
+  padding: $spacing-xs;
+  border-radius: $spacing-unit;
+
+  & > svg {
+    fill: $brand-color;
+    width: $big-heart-icon-width;
+    height: $big-heart-icon-height;
+  }
+
+  &:hover {
+    background-color: $dark-gray;
+  }
+}
