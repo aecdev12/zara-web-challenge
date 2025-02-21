@@ -1,0 +1,21 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+.text-input {
+  @include flex(center, flex-start, $gap: $spacing-sm);
+  border-bottom: 2px solid $foreground;
+  padding-bottom: $spacing-xs;
+
+  & > input {
+    width: inherit;
+    border: none;
+    outline: none;
+    font-size: $font-base;
+    text-transform: uppercase;
+    font-family: var(--font-robot-condensed);
+
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
