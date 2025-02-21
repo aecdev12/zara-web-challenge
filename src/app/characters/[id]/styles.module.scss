@@ -1,0 +1,101 @@
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins" as *;
+
+$main-img-height: 398px;
+
+.main-body {
+  overflow: hidden;
+  overflow-y: auto;
+  @include flex(center, flex-start, column, 0, 100%, fit-content);
+
+  & > .hero {
+    background-color: $foreground;
+    @include flex(center, center, $width: 100%, $height: fit-content);
+
+    & > .content {
+      max-width: $desktop-content-max-width;
+      color: $background;
+      @include flex(center, flex-start, row, 0, 100%, 100%);
+
+      @include breakpoint($breakpoint-sm) {
+        flex-direction: column;
+      }
+
+      & > .name-desc {
+        @include flex(flex-start, center, column, $spacing-lg, 100%);
+        padding: $spacing-xxl;
+
+        @include breakpoint($breakpoint-sm) {
+          padding: $spacing-lg $spacing-md $spacing-xxl $spacing-md;
+        }
+
+        & > .heading {
+          @include flex(center, space-between);
+
+          & svg,
+          button {
+            width: $big-heart-icon-width;
+            height: $big-heart-icon-height;
+          }
+
+          & > h1 {
+            font-size: $font-size-xl;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+
+            @include breakpoint($breakpoint-md) {
+              font-size: $font-size-lg;
+            }
+          }
+        }
+      }
+
+      & > .img {
+        position: relative;
+        height: 100%;
+        width: 30%;
+
+        @include breakpoint($breakpoint-sm) {
+          height: $main-img-height;
+          width: 100%;
+        }
+
+        & > img {
+          object-fit: cover;
+          object-position: top;
+
+          @include breakpoint($breakpoint-sm) {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    @include bottomRightCornerTriangle();
+  }
+
+  & > .caroussel {
+    max-width: $desktop-content-max-width;
+    @include flex(flex-start, flex-start, column, $spacing-lg, 100%, 100%);
+    padding: $spacing-xxl 0;
+
+    @include breakpoint($breakpoint-md) {
+      padding-right: 0;
+      padding-left: $spacing-xxl;
+    }
+
+    @include breakpoint($breakpoint-sm) {
+      padding-left: $spacing-md;
+    }
+
+    & > h2 {
+      text-transform: uppercase;
+      font-weight: $font-bold;
+      font-size: $font-size-lg;
+
+      @include breakpoint($breakpoint-md) {
+        font-size: $font-size-md;
+      }
+    }
+  }
+}
