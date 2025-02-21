@@ -1,0 +1,21 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+@use "sass:color";
+
+.btn {
+  @include flex($gap: $spacing-xs, $width: fit-content);
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  outline: none;
+  font-family: var(--font-robot-condensed);
+  border-radius: $spacing-xs;
+  font-weight: $font-bold;
+  background: $brand-color;
+  color: $background;
+  transition: background $transition-speed-normal $transition-mode-default;
+  cursor: pointer;
+
+  &:hover {
+    background: color.adjust($color: $brand-color, $lightness: -10%);
+  }
+}
