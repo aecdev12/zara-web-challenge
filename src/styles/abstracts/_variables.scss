@@ -1,0 +1,64 @@
+// Color
+$brand-color: #ec1d24;
+$background: #fff;
+$foreground: #000;
+$light-gray: #d9d9d9;
+$gray: #aaaaaa;
+$dark-gray: #333333;
+
+// Typography
+$font-s: 12px;
+$font-sm: 14px;
+$font-base: 16px;
+$font-size-md: 24px;
+$font-size-lg: 32px;
+$font-size-xl: 40px;
+
+$body-line-height: 18.75px;
+$small-line-height: 14.06px;
+
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+// Spacing
+$spacing-unit: 4px;
+$spacing-xs: $spacing-unit * 2; // 8px
+$spacing-sm: $spacing-unit * 3; // 12px
+$spacing-md: $spacing-unit * 4; // 16px
+$spacing-lg: $spacing-unit * 6; // 24px
+$spacing-xl: $spacing-unit * 8; // 32px
+$spacing-xll: $spacing-unit * 9; // 36px
+$spacing-xxl: $spacing-unit * 12; // 48px
+$spacing-xxxl: $spacing-unit * 16; //64px
+
+// Border readius
+$border-radius-sm: $spacing-unit;
+$border-radius-md: $spacing-xs;
+$border-radius-lg: $spacing-md;
+
+// Layout
+$desktop-content-max-width: 960px;
+
+// Breakpoints
+$breakpoint-ml: 1380px;
+$breakpoint-md: 1080px;
+$breakpoint-sm: 768px;
+
+// Transition
+$transition-speed-fast: 0.3s;
+$transition-speed-normal: 0.5s;
+$transition-speed-slow: 1s;
+
+$transition-mode-default: ease;
+
+// Z-Index
+$z-index-overlay: 1000;
+
+// Blur
+$backdrop-blur-md: blur(16px);
+
+// Miscellaneous
+$corner-chip-default-size: 20px;
+$big-heart-icon-width: 24px;
+$big-heart-icon-height: 21.68px;
